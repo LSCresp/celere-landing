@@ -360,11 +360,11 @@ export function ContactForm() {
                                     <button 
                                         type="submit" 
                                         disabled={isSubmitting}
-                                        className="w-full bg-[#121212] py-5 rounded-xl text-white font-bold tracking-[0.05em] uppercase hover:bg-celere-gold transition-all duration-500 shadow-[0_8px_20px_rgb(0,0,0,0.15)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:-translate-y-1 mt-8 text-sm flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:bg-[#121212] disabled:cursor-not-allowed"
+                                        className="w-full bg-gold-gradient py-5 rounded-xl text-[#121212] font-bold tracking-[0.05em] uppercase hover:brightness-110 transition-all duration-500 shadow-[0_8px_20px_rgba(212,175,55,0.2)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.35)] hover:-translate-y-0.5 mt-8 text-sm flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {isSubmitting ? (
                                             <>
-                                                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                                <div className="w-5 h-5 border-2 border-[#121212]/30 border-t-[#121212] rounded-full animate-spin"></div>
                                                 Processando Solicitação...
                                             </>
                                         ) : (
@@ -379,7 +379,7 @@ export function ContactForm() {
                 </div >
             </section >
 
-            <footer className="relative z-20 mt-8 md:-mt-16 bg-gradient-to-t from-[#F6F2EA]/90 to-[#FDFBF7]/70 backdrop-blur-2xl pt-10 pb-6 shadow-[0_-12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden text-center text-sm text-celere-gray rounded-t-3xl md:rounded-t-[3rem] border-t border-[#FDFBF7]/60">
+            <footer className="relative z-20 -mt-8 md:-mt-16 bg-gradient-to-t from-[#F6F2EA]/90 to-[#FDFBF7]/70 backdrop-blur-2xl pt-10 pb-6 shadow-[0_-12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden text-center text-sm text-celere-gray rounded-t-3xl md:rounded-t-[3rem] border-t border-[#FDFBF7]/60">
                 <div className="absolute inset-0 bg-[#FDFBF7]/30 z-0 pointer-events-none mix-blend-overlay"></div>
                 <div className="absolute inset-x-0 top-0 h-[10px] bg-gradient-to-b from-[#FDFBF7] to-transparent opacity-80 z-0 pointer-events-none"></div>
 
