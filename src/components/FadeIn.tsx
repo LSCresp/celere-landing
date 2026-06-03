@@ -15,6 +15,8 @@ export function FadeIn({ children, delay = 0, className = "", direction = "up" }
 
     useEffect(() => {
         let timer: NodeJS.Timeout | null = null;
+        const currentRef = domRef.current;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -22,23 +24,22 @@ export function FadeIn({ children, delay = 0, className = "", direction = "up" }
                         timer = setTimeout(() => {
                             setIsVisible(true);
                         }, delay);
-                    } else {
-                        // Ao invés de usar threshold alto e clearTimeout agressivo
-                        // limpamos o timer e só escondemos o elemento quando ele realmente sair da tela
-                        if (timer) clearTimeout(timer);
-                        setIsVisible(false);
+                        // Anima apenas uma vez: para de observar assim que entra na tela
+                        if (currentRef) {
+                            observer.unobserve(currentRef);
+                        }
                     }
                 });
             },
-            { threshold: 0, rootMargin: "0px 0px -50px 0px" } // Dispara quando elemento cruza 50px pra dentro
+            { threshold: 0.01, rootMargin: "0px 0px 80px 0px" } // Dispara 80px antes do elemento entrar no viewport
         );
 
-        const currentRef = domRef.current;
         if (currentRef) {
             observer.observe(currentRef);
         }
 
         return () => {
+            if (timer) clearTimeout(timer);
             if (currentRef) {
                 observer.unobserve(currentRef);
             }
@@ -49,16 +50,16 @@ export function FadeIn({ children, delay = 0, className = "", direction = "up" }
     if (!isVisible) {
         switch (direction) {
             case "up":
-                transformClass = "translate-y-12";
+                transformClass = "translate-y-8"; // Reduzido de 12 para 8 para ficar mais ágil
                 break;
             case "down":
-                transformClass = "-translate-y-12";
+                transformClass = "-translate-y-8";
                 break;
             case "left":
-                transformClass = "translate-x-12";
+                transformClass = "translate-x-8";
                 break;
             case "right":
-                transformClass = "-translate-x-12";
+                transformClass = "-translate-x-8";
                 break;
             case "none":
                 transformClass = "";
@@ -71,8 +72,9 @@ export function FadeIn({ children, delay = 0, className = "", direction = "up" }
     return (
         <div
             ref={domRef}
-            className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100" : "opacity-0"
-                } ${transformClass} ${className}`}
+            className={`transition-all duration-700 ease-out ${
+                isVisible ? "opacity-100" : "opacity-0"
+            } ${transformClass} ${className}`}
         >
             {children}
         </div>
