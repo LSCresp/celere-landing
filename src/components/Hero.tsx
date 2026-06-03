@@ -3,7 +3,7 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-40 px-6 min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden pt-28 pb-20 md:pt-32 md:pb-40 px-6 min-h-[90vh] flex items-center">
         {/* Vídeo em Fundo preenchendo toda a section (passa por trás do header fixo) */}
         <video
           autoPlay
@@ -34,18 +34,18 @@ export function Hero() {
             />
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 max-w-4xl leading-[1.05] text-[#121212]">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 max-w-4xl leading-[1.05] text-[#121212] px-2">
             Engenharia de Automação para{" "}
             <span className="bg-gold-gradient text-transparent bg-clip-text">
               Projetos Exclusivos
             </span>
           </h1>
 
-          <p className="text-base md:text-lg text-[#121212]/70 mb-10 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 mb-10 max-w-2xl leading-relaxed px-2">
             A infraestrutura invisível do seu imóvel. Projetamos, integramos e executamos sistemas de conforto, estabilidade e segurança integrados à arquitetura para garantir uma rotina absolutamente fluida.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
             <a href="#contato" className="bg-gold-gradient text-[#121212] px-8 py-4 rounded-full font-bold text-center transition-transform hover:scale-[1.02] shadow-lg hover:shadow-[0_12px_40px_rgba(212,175,55,.18)] flex justify-center items-center gap-2 w-full sm:w-auto">
                Fale Conosco
             </a>
@@ -60,10 +60,10 @@ export function Hero() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-[#F6F2EA]">
+      <section className="py-16 md:py-24 px-6 bg-[#F6F2EA]">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl bg-[#FFFCF6] border border-[rgba(18,18,18,.08)] px-6 py-12 md:px-12 shadow-sm">
-            <h2 className="text-3xl md:text-4xl font-serif mb-8 text-[#121212] font-bold">
+          <div className="rounded-3xl bg-[#FFFCF6] border border-[rgba(18,18,18,.08)] px-5 py-10 md:px-12 shadow-sm">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-8 text-[#121212] font-bold">
               Automação não é sobre os produtos.{" "}
               <br className="hidden md:block" />
               <span className="text-celere-gold">
@@ -71,7 +71,7 @@ export function Hero() {
               </span>
             </h2>
 
-            <p className="text-[#121212]/70 text-base md:text-lg leading-relaxed">
+            <p className="text-[#121212]/70 text-sm sm:text-base md:text-lg leading-relaxed">
               Dispositivos soltos não compõem uma casa inteligente, apenas fragmentam sua rotina. 
               Na Célere, consolidamos o ecossistema tecnológico do seu imóvel através de um projeto 
               de engenharia robusto: centralizando o controle, purificando a alvenaria de excesso de interruptores 

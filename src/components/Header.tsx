@@ -42,7 +42,7 @@ export function Header() {
                     <img
                         src="/logo.png"
                         alt="Célere Engenharia de Automação"
-                        className={`w-auto object-contain rounded-2xl transition-all duration-500 relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] ${scrolled ? 'h-[3rem] md:h-[4.5rem]' : 'h-[4.5rem] md:h-[6.5rem]'}`}
+                        className={`w-auto object-contain rounded-2xl transition-all duration-500 relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] ${scrolled ? 'h-[2.2rem] md:h-[4.5rem]' : 'h-[3.2rem] md:h-[6.5rem]'}`}
                     />
                 </a>
 
@@ -71,14 +71,20 @@ export function Header() {
                 </button>
             </div>
 
+            {/* Mobile Menu Backdrop */}
+            <div 
+                className={`md:hidden fixed inset-x-0 bottom-0 top-[100%] bg-black/60 backdrop-blur-sm z-40 transition-all duration-500 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+                onClick={() => setIsMenuOpen(false)}
+            />
+
             {/* Mobile Menu Overlay */}
-            <div className={`md:hidden absolute top-[100%] left-0 w-full bg-[#121212]/95 backdrop-blur-3xl border-b border-white/10 transition-all duration-500 overflow-hidden ${isMenuOpen ? "max-h-[400px] opacity-100 shadow-2xl" : "max-h-0 opacity-0"}`}>
+            <div className={`md:hidden absolute top-[100%] left-0 w-full bg-[#121212]/95 backdrop-blur-3xl border-b border-white/10 transition-all duration-500 ease-in-out overflow-hidden z-50 ${isMenuOpen ? "max-h-[400px] opacity-100 shadow-2xl" : "max-h-0 opacity-0 pointer-events-none"}`}>
                 <nav className="flex flex-col p-8 gap-6 text-white/90 text-[15px] font-medium tracking-wide">
                     <a href="#solucoes" onClick={() => setIsMenuOpen(false)} className="hover:text-celere-gold transition-colors py-2 border-b border-white/5">Soluções</a>
                     <a href="#diferenciais" onClick={() => setIsMenuOpen(false)} className="hover:text-celere-gold transition-colors py-2 border-b border-white/5">Diferenciais</a>
                     <a href="#pacotes" onClick={() => setIsMenuOpen(false)} className="hover:text-celere-gold transition-colors py-2 border-b border-white/5">Perfis de Projeto</a>
-                    <a href="#contato" onClick={() => setIsMenuOpen(false)} className="text-celere-gold font-bold mt-4 tracking-wider flex items-center justify-between">
-                        Solicitar Orçamento <span>&rarr;</span>
+                    <a href="#contato" onClick={() => setIsMenuOpen(false)} className="mt-4 bg-gold-gradient text-[#121212] px-8 py-3.5 rounded-full hover:brightness-110 transition-all duration-500 shadow-[0_4px_14px_rgba(212,175,55,0.2)] font-bold tracking-wider text-sm text-center flex items-center justify-center gap-2">
+                        Solicitar Orçamento &rarr;
                     </a>
                 </nav>
             </div>

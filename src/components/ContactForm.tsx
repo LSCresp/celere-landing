@@ -164,16 +164,16 @@ export function ContactForm() {
                 </div>
             )}
 
-            <section className="py-32 px-6 container mx-auto border-t border-[rgba(18,18,18,.05)] bg-[#FAFAFA]">
+            <section className="py-16 md:py-32 px-6 container mx-auto border-t border-[rgba(18,18,18,.05)] bg-[#FAFAFA]">
                 <FadeIn>
                     <span className="text-celere-gold font-bold tracking-[0.2em] text-xs uppercase mb-4 block text-center">Tire suas dúvidas</span>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-center mb-20 text-[#121212]">Perguntas Frequentes</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-center mb-12 md:mb-20 text-[#121212]">Perguntas Frequentes</h2>
                 </FadeIn>
                 <div className="max-w-3xl mx-auto space-y-6">
                     {faqs.map((faq, i) => (
                         <div key={`faq-${i}`} className="w-full">
                             <FadeIn delay={i * 100} direction="up" className="w-full block">
-                                <details className="group bg-[#FDFBF7] border border-[rgba(18,18,18,.04)] rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-celere-gold/20 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden">
+                                <details className="group bg-[#FDFBF7] border border-[rgba(18,18,18,.04)] rounded-2xl p-5 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-celere-gold/20 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden">
                                     <summary className="flex cursor-pointer items-center justify-between font-bold text-lg text-[#121212]">
                                         {faq.q}
                                         <div className="w-10 h-10 rounded-full bg-[#FAFAFA] flex items-center justify-center border border-celere-gold/10 group-open:bg-celere-gold/10 group-open:border-transparent transition-colors">
@@ -188,8 +188,8 @@ export function ContactForm() {
                 </div>
             </section>
 
-            <section id="contato" className="py-32 px-6 bg-gradient-to-b from-[#FDFBF7] to-[#F6F2EA] border-t border-[rgba(18,18,18,.05)] relative pb-40">
-                <div className="container mx-auto px-6 max-w-5xl text-center mb-20">
+            <section id="contato" className="py-16 md:py-32 px-6 bg-gradient-to-b from-[#FDFBF7] to-[#F6F2EA] border-t border-[rgba(18,18,18,.05)] relative pb-24 md:pb-40">
+                <div className="container mx-auto px-6 max-w-5xl text-center mb-12 md:mb-20">
                     <FadeIn>
                         <span className="text-celere-gold font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Engenharia Sob Medida</span>
                         <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-[#121212]">Inicie seu projeto consultivo</h2>
@@ -221,7 +221,7 @@ export function ContactForm() {
 
                     <div className="lg:col-span-7 relative">
                         <FadeIn direction="left" delay={200} className="w-full">
-                            <div className="bg-[#FDFBF7] p-8 md:p-12 border border-[rgba(18,18,18,.04)] rounded-[2.5rem] relative shadow-[0_20px_60px_rgb(0,0,0,0.05)] overflow-hidden">
+                            <div className="bg-[#FDFBF7] p-5 sm:p-8 md:p-12 border border-[rgba(18,18,18,.04)] rounded-3xl md:rounded-[2.5rem] relative shadow-[0_20px_60px_rgb(0,0,0,0.05)] overflow-hidden">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-celere-gold opacity-10 blur-[80px] rounded-full pointer-events-none"></div>
                                 <form onSubmit={handleFormSubmit} className="space-y-7 relative z-10">
                                     <div className="grid grid-cols-2 gap-5">
@@ -379,7 +379,7 @@ export function ContactForm() {
                 </div >
             </section >
 
-            <footer className="relative z-20 -mt-16 bg-gradient-to-t from-[#F6F2EA]/90 to-[#FDFBF7]/70 backdrop-blur-2xl pt-10 pb-6 shadow-[0_-12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden text-center text-sm text-celere-gray rounded-t-[3rem] border-t border-[#FDFBF7]/60">
+            <footer className="relative z-20 mt-8 md:-mt-16 bg-gradient-to-t from-[#F6F2EA]/90 to-[#FDFBF7]/70 backdrop-blur-2xl pt-10 pb-6 shadow-[0_-12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden text-center text-sm text-celere-gray rounded-t-3xl md:rounded-t-[3rem] border-t border-[#FDFBF7]/60">
                 <div className="absolute inset-0 bg-[#FDFBF7]/30 z-0 pointer-events-none mix-blend-overlay"></div>
                 <div className="absolute inset-x-0 top-0 h-[10px] bg-gradient-to-b from-[#FDFBF7] to-transparent opacity-80 z-0 pointer-events-none"></div>
 
