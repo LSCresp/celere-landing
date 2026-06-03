@@ -379,7 +379,7 @@ export function ContactForm() {
                 </div >
             </section >
 
-            <footer className="relative z-20 -mt-8 md:-mt-16 bg-gradient-to-t from-[#F6F2EA]/90 to-[#FDFBF7]/70 backdrop-blur-2xl pt-10 pb-6 shadow-[0_-12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden text-center text-sm text-celere-gray rounded-t-3xl md:rounded-t-[3rem] border-t border-[#FDFBF7]/60">
+            <footer className="relative z-20 -mt-8 md:-mt-16 bg-gradient-to-b from-[#F6F2EA] to-[#FDFBF7] pt-10 pb-6 shadow-[0_-12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden text-center text-sm text-celere-gray rounded-t-3xl md:rounded-t-[3rem] border-t border-[#FDFBF7]/60">
                 <div className="absolute inset-0 bg-[#FDFBF7]/30 z-0 pointer-events-none mix-blend-overlay"></div>
                 <div className="absolute inset-x-0 top-0 h-[10px] bg-gradient-to-b from-[#FDFBF7] to-transparent opacity-80 z-0 pointer-events-none"></div>
 
