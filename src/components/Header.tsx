@@ -24,18 +24,25 @@ export function Header() {
     }, [isMenuOpen]);
 
     return (
-        <header className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-celere-gold/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] ${scrolled
-            ? "bg-[#050505]/95 backdrop-blur-xl py-2"
-            : "bg-[#050505]/95 backdrop-blur-xl py-4 md:bg-transparent md:backdrop-blur-none md:py-5"
+        <header className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-celere-gold/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-transparent ${scrolled
+            ? "py-2"
+            : "py-4 md:py-5"
             }`}>
+
+            {/* Background Dinâmico do Header */}
+            <div className={`absolute inset-0 z-[-3] transition-all duration-500 ${
+                scrolled || isMenuOpen
+                    ? "bg-[#050505]/95 backdrop-blur-xl opacity-100" 
+                    : "bg-[#050505]/60 backdrop-blur-md md:bg-transparent md:backdrop-blur-none"
+            }`} />
 
             {/* Background da Imagem (Aparece apenas quando não scrollado e no desktop) */}
             <div
-                className={`hidden md:block absolute inset-0 w-full h-full z-[-2] bg-contain bg-center bg-repeat-x transition-opacity duration-500 ${scrolled ? 'opacity-0' : 'opacity-100'}`}
+                className={`absolute inset-0 w-full h-full z-[-2] bg-cover bg-center bg-no-repeat md:bg-contain md:bg-repeat-x transition-opacity duration-500 ${scrolled || isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
                 style={{ backgroundImage: "url('/bg-header.png')" }}
             ></div>
             {/* Overlay Escuro com Degradê Leve sobre a imagem p/ garantir contraste sem apagar a imagem */}
-            <div className={`hidden md:block absolute inset-0 w-full h-full z-[-1] transition-all duration-500 ${scrolled ? 'opacity-0' : 'bg-black/50'}`}></div>
+            <div className={`absolute inset-0 w-full h-full z-[-1] transition-opacity duration-500 ${scrolled || isMenuOpen ? 'opacity-0 pointer-events-none' : 'bg-black/50 opacity-100'}`}></div>
 
             <div className="container mx-auto px-6 md:px-10 flex items-center justify-between transition-all duration-500">
                 <a href="#" className="flex items-center gap-4 outline-none transition-transform hover:scale-105 duration-500">
